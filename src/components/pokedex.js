@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { PokemonContext } from './PokemonContext';
+import { PokemonContext } from '../context/PokemonContext';
 import { listPokemons } from './listPokemons';
 
 const Pokedex = () => {
@@ -7,12 +7,12 @@ const Pokedex = () => {
 
   return (
     <div className="pokedex">
-      <h2>Pokedex</h2>
+      <h2>TEAM</h2>
 
       <table>
         <tr>
           <th>Pokemon</th>
-          <th>Release</th>
+          <th>Remove</th>
         </tr>
         {listPokemons({
           pokemons: capturedPokemons,
