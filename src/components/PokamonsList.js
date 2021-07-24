@@ -1,40 +1,33 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { PokemonContext } from '../context/PokemonContext';
 import { listPokemons } from './listPokemons';
-import SearchInput from './SearchPokemonInput';
 
-const url = "https://pokeapi.co/api/v2/pokemon";
+
 
 const PokemonsList = () => {
-  const { pokemons, capture, addPokemons } = useContext(PokemonContext);
+  const { pokemons, capture } = useContext(PokemonContext);
 
-  useEffect(() => {
-    const fetchPokemons = async () => {
-      const response = await fetch(url);
-      const data = await response.json();
-      addPokemons(data.results);
-      console.log(data)
-    };
+    console.log(capture)
 
-    fetchPokemons();
-  }, []);
 
   return (
     <div className="pokemons-list">
-      <SearchInput />
-      <h2>Pokemons List</h2>
+      <h2 className="pokemon-header" >Pokemons List</h2>
 
-      <table>
-        <tr>
+      <table className="table">
+        <tr className="table-header">
           <th>Pokemon</th>
           <th>Add to Team</th>
-          <th>view detials</th>
+          {/* <th>view detials</th> */}
         </tr>
         {listPokemons({
           pokemons,
           onClick: capture,
-          buttonLabel: '+',
-          viewDetail: 'view details'
+          classNam: 'add-to-team-btn',
+          buttonLabel: 'add to team',
+          viewDetail: 'view details',
+          viewDetailClassNam: 'details-btn'
+
         })}
       </table>
     </div>
