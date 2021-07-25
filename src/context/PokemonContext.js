@@ -8,7 +8,7 @@ const PokemonProvider = (props) => {
   const url = "https://pokeapi.co/api/v2/pokemon";
   const [state, dispatch] = usePokemonReducer();
   const { pokemons, capturedPokemons } = state;
-  const [individualPokemon, setIndividulPokemon] = useState()
+  const [individualPokemon, setIndividulPokemon] = useState({})
   const [ input, setInput] = useState({name: ""})
 
   const capture = (pokemon) => () => dispatch({ type: CAPTURE, pokemon });
@@ -30,13 +30,12 @@ const PokemonProvider = (props) => {
     e.preventDefault()
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${input.name}`);
     const data = await response.json();
-    addPokemons(data.results);
+    setIndividulPokemon(data);
   };
-  const pokemonDetails = async (e, name) => {
-    e.preventDefault()
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  const pokemonDetails = async ( pokemon) => {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`);
     const data = await response.json();
-    setIndividulPokemon(data.results);
+    setIndividulPokemon(data);
   };
 
   const providerValue = {

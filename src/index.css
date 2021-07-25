@@ -8,13 +8,20 @@ body {
 }
 .search-section{
   display: flex;
+  width: 100%;
   padding: 15px;
+  background: gray;
+  box-shadow: 1px 1px 2px white;
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 .view-all-btn{
   width: 150px;
+  height: 50px;
   background: rgb(0, 81, 255);
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   border-radius: 10px;
   text-transform: capitalize;
@@ -56,22 +63,27 @@ body {
 
 .main {
   display: flex;
-  min-height: 600px;
+  width: 100%;
+  min-height: 700px;
 }
 .pokemons-containner{
   width: 100%;
-  padding: 0 50px 20px;
+  /* padding: 0 50px 20px; */
   border-bottom: 1px solid;
   flex-grow: 1;
+  background: linear-gradient(rgba(75, 75, 75, 0.4), rgba(85, 84, 87, 0.5), rgba(10,30, 10, 0.5));
 }
 .pokemons-body{
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px;
 }
 
 .pokedex {
   border-left: 1px solid;
   width: 30%;
+  background: linear-gradient(rgba(116, 115, 115, 0.1), rgba(112, 112, 112, 0.1),rgba(56, 48, 48, 0.1));
 }
 .team-header, .pokemon-header{
   font-size: 18px;
@@ -81,24 +93,34 @@ body {
   align-items: center;
   letter-spacing: 0.6px;
   padding: 5px;
+  margin: 0;
   justify-content: center;
 }
-
+.pokemons-list{
+  width: 50%;
+}
 
 .pokedex {
-  padding: 0 50px 20px;
+  padding: 2px;
   border-bottom: 1px solid;
   flex-grow: 1;
+  width: 40%;
 }
 
 .form-wrapper {
   margin-top: 20px;
   text-align: center;
 }
-.table{
+table, th, td{
+  border-bottom: 1px solid black;
+  height: 50px;
+}
+.table {
   width: 100%;
 }
-
+.team-table{
+  width: 100%;
+}
 .add-to-team-btn{
   font-size: 10px;
   background: rgb(4, 151, 29);
@@ -130,4 +152,37 @@ body {
   background: rgba(0, 0, 0, 0.104);
   margin-top: 2px;
   text-align: center;
+}
+.detail-header{
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.pokemon-detals-containner{
+  position: sticky;
+  width: 40%;
+}
+.polemon-detail-table-body{
+  text-align: center;
+  text-align: end;
+}
+.pokemon-details-table{
+  width: 100%;
+  text-align: end;
+}
+.pokemon-names{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.pokemon-detail-value{
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(3, 84, 3);
+  text-transform: capitalize;
+}
+.pokemon-detail-key{
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
 }

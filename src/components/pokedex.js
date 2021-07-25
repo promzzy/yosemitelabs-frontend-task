@@ -7,13 +7,15 @@ const Pokedex = () => {
 
   return (
     <div className="pokedex">
-      <h2 className="team-header">TEAM</h2>
+      <h2 className="team-header">MY TEAM</h2>
 
-      <table className="table">
-        <tr className="table-header">
+      <table className="team-table">
+          <thead>
+          <tr className="table-header">
           <th>Pokemon</th>
           <th>Remove</th>
         </tr>
+          </thead>
         {listPokemons({
           pokemons: capturedPokemons,
           onClick: release,

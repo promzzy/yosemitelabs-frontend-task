@@ -7,7 +7,6 @@ import { listPokemons } from './listPokemons';
 const PokemonsList = () => {
   const { pokemons, capture } = useContext(PokemonContext);
 
-    console.log(capture)
 
 
   return (
@@ -15,11 +14,13 @@ const PokemonsList = () => {
       <h2 className="pokemon-header" >Pokemons List</h2>
 
       <table className="table">
-        <tr className="table-header">
+          <thead>
+          <tr className="table-header">
           <th>Pokemon</th>
           <th>Add to Team</th>
-          {/* <th>view detials</th> */}
+          <th>view detials</th>
         </tr>
+          </thead>
         {listPokemons({
           pokemons,
           onClick: capture,
